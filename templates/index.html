@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Descargar de YouTube</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #loader {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+    <div class="container mt-5">
+        <h2 class="mb-4">🎧 Descargador de YouTube</h2>
+        <form method="POST" onsubmit="mostrarCargador()">
+            <div class="mb-3">
+                <label for="url" class="form-label">Pega el enlace del video:</label>
+                <input type="text" class="form-control" name="url" placeholder="https://www.youtube.com/watch?v=..."
+                    required>
+            </div>
+            <button type="submit" class="btn btn-primary">Analizar</button>
+        </form>
+
+        <div id="loader">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Cargando...</span>
+            </div>
+            <p class="mt-2">Analizando el video... 🎬</p>
+        </div>
+    </div>
+
+    <script>
+        function mostrarCargador() {
+            document.getElementById('loader').style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>
