@@ -122,6 +122,7 @@ def descargar():
         'outtmpl': output_path,
         'postprocessors': [],
         'quiet': True,
+        'cookiefile': 'cookies.txt'
     }
 
     if audio_mp3:
