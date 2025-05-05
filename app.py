@@ -38,7 +38,7 @@ def formatos():
         'skip_download': True,
         'forcejson': True,
         'extract_flat': False,
-        'cookies': 'cookies.txt',  # <- Ruta a las cookies
+        # 'cookies': 'cookies.txt',  # <- Ruta a las cookies
         'cookiefile': cookies_file_path,
     }
 
@@ -124,7 +124,7 @@ def descargar():
         'outtmpl': output_path,
         'postprocessors': [],
         'quiet': True,
-        'cookies': 'cookies.txt',  # <- Ruta a las cookies
+        # 'cookies': 'cookies.txt',  # <- Ruta a las cookies
         'cookiefile': cookies_file_path,
     }
 
