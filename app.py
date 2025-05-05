@@ -11,6 +11,9 @@ from pathlib import Path
 #     with open("cookies.txt", "w", encoding="utf-8") as f:
 #         f.write(cookies_content)
 
+cookie_path = os.path.join(os.path.dirname(__file__), 'cookies.txt')
+
+
 app = Flask(__name__)
 
 # Ruta para el formulario principal
@@ -35,7 +38,7 @@ def formatos():
         'forcejson': True,
         'extract_flat': False,
         'cookies': 'cookies.txt',  # <- Ruta a las cookies
-        'cookiefile': 'cookies.txt',
+        'cookiefile': cookie_path,
     }
 
     try:
