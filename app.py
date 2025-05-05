@@ -6,10 +6,10 @@ import yt_dlp
 import os
 from pathlib import Path
 
-cookies_content = os.getenv("COOKIES_CONTENT")
-if cookies_content:
-    with open("cookies.txt", "w", encoding="utf-8") as f:
-        f.write(cookies_content)
+# cookies_content = os.getenv("COOKIES_CONTENT")
+# if cookies_content:
+#     with open("cookies.txt", "w", encoding="utf-8") as f:
+#         f.write(cookies_content)
 
 app = Flask(__name__)
 
@@ -34,7 +34,8 @@ def formatos():
         'skip_download': True,
         'forcejson': True,
         'extract_flat': False,
-        'cookiefile': 'cookies.txt'  # <- Ruta a las cookies
+        'cookies': 'cookies.txt',  # <- Ruta a las cookies
+        'cookiefile': 'cookies.txt',
     }
 
     try:
