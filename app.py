@@ -6,11 +6,13 @@ import yt_dlp
 import os
 from pathlib import Path
 
+# Guardar cookies.txt si existe la variable de entorno
 cookies_content = os.getenv("COOKIES_CONTENT")
-if cookies_content:
-    with open("cookies.txt", "w", encoding="utf-8") as f:
-        f.write(cookies_content)
+cookies_file_path = os.path.join(os.path.dirname(__file__), "cookies.txt")
 
+if cookies_content:
+    with open(cookies_file_path, "w", encoding="utf-8") as f:
+        f.write(cookies_content)
 
 
 app = Flask(__name__)
@@ -37,7 +39,7 @@ def formatos():
         'forcejson': True,
         'extract_flat': False,
         'cookies': 'cookies.txt',  # <- Ruta a las cookies
-        'cookiefile': cookies_content,
+        'cookiefile': cookies_file_path,
     }
 
     try:
@@ -122,6 +124,8 @@ def descargar():
         'outtmpl': output_path,
         'postprocessors': [],
         'quiet': True,
+        'cookies': 'cookies.txt',  # <- Ruta a las cookies
+        'cookiefile': cookies_file_path,
     }
 
     if audio_mp3:
