@@ -8,8 +8,11 @@ from pathlib import Path
 
 cookies_content = os.getenv("COOKIES_CONTENT")
 if cookies_content:
+    print("Se encontraron cookies en las variables de entorno.")
     with open("cookies.txt", "w", encoding="utf-8") as f:
         f.write(cookies_content)
+else:
+    print("No se encontraron cookies en las variables de entorno.")
 
 app = Flask(__name__)
 
